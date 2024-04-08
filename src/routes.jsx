@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
 import { useEffect } from "react";
+import Booking from "./pages/Booking";
+import Checkin from "./pages/Checkin";
 
 const DashboardRedirect = () => {
   const navigate = useNavigate();
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: "/bookings",
         element: <Bookings />,
+      },
+      {
+        path: "/bookings/:bookingId",
+        element: <Booking />,
+      },
+      {
+        path: "/checkin/:bookingId",
+        element: <Checkin />,
       },
       {
         path: "/cabins",
