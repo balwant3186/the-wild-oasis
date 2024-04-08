@@ -11,6 +11,7 @@ import AppLayout from "./ui/AppLayout";
 import { useEffect } from "react";
 import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 const DashboardRedirect = () => {
   const navigate = useNavigate();
@@ -24,7 +25,11 @@ const DashboardRedirect = () => {
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     errorElement: <PageNotFound />,
     children: [
       {
@@ -63,11 +68,11 @@ const router = createBrowserRouter([
         path: "/account",
         element: <Account />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
