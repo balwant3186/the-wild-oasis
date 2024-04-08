@@ -87,7 +87,7 @@ const CabinRow = ({ cabin }) => {
                 <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
               </Modal.Open>
 
-              <Modal.Open opens="delete">
+              <Modal.Open opens="delete-cabin">
                 <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
               </Modal.Open>
             </Menus.List>
@@ -97,7 +97,7 @@ const CabinRow = ({ cabin }) => {
             <CreateCabinForm cabinToEdit={cabin} />
           </Modal.Window>
 
-          <Modal.Window name="delete">
+          <Modal.Window name="delete-cabin">
             <ConfirmDelete
               onConfirm={() => deleteCabin(cabinId)}
               resourceName={`Cabin ${name}`}
