@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./ui/ErrorFallback";
 
 const DashboardRedirect = () => {
   const navigate = useNavigate();
@@ -27,7 +29,12 @@ const router = createBrowserRouter([
   {
     element: (
       <ProtectedRoute>
-        <AppLayout />
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          onReset={() => window.location.replace("/")}
+        >
+          <AppLayout />
+        </ErrorBoundary>
       </ProtectedRoute>
     ),
     errorElement: <PageNotFound />,
