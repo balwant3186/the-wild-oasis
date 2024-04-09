@@ -156,7 +156,6 @@ const DurationChart = ({ confirmedStays }) => {
           <Pie
             dataKey="value"
             nameKey="duration"
-            isAnimationActive={false}
             data={data}
             cx="40%"
             cy="50%"
