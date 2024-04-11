@@ -27,6 +27,10 @@ const DashboardRedirect = () => {
 
 const router = createBrowserRouter([
   {
+    path: "/login",
+    element: <Login />,
+  },
+  {
     element: (
       <ProtectedRoute>
         <ErrorBoundary
@@ -76,10 +80,6 @@ const router = createBrowserRouter([
         element: <Account />,
       },
     ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
 ]);
 

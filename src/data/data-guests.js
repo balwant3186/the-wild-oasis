@@ -1,51 +1,46 @@
-// Search for: 'jo', 'fa', 'mar', 'emm', 'ah'
-
 export const guests = [
   {
-    // id: 1000,
-    fullName: "Jonas Schmedtmann",
-    email: "hello@jonas.io",
-    nationality: "Portugal",
+    fullName: "Balwant Singh",
+    email: "hello@balwant.io",
+    nationality: "India",
     nationalId: "3525436345",
-    countryFlag: "https://flagcdn.com/pt.svg",
+    countryFlag: "https://flagcdn.com/in.svg",
   },
   {
-    fullName: "Jonathan Smith",
-    email: "johnsmith@test.eu",
+    fullName: "Jessica Williams",
+    email: "jessica.williams@example.com",
     nationality: "Great Britain",
     nationalId: "4534593454",
     countryFlag: "https://flagcdn.com/gb.svg",
   },
   {
-    fullName: "Jonatan Johansson",
-    email: "jonatan@example.com",
+    fullName: "Michael Brown",
+    email: "michael.brown@example.com",
     nationality: "Finland",
     nationalId: "9374074454",
     countryFlag: "https://flagcdn.com/fi.svg",
   },
   {
-    fullName: "Jonas Mueller",
-    email: "jonas@example.eu",
+    fullName: "Jin Kazama",
+    email: "jin.kazama@example.eu",
     nationality: "Germany",
     nationalId: "1233212288",
     countryFlag: "https://flagcdn.com/de.svg",
   },
   {
-    fullName: "Jonas Anderson",
+    fullName: "Balwant Anderson",
     email: "anderson@example.com",
     nationality: "Bolivia (Plurinational State of)",
     nationalId: "0988520146",
     countryFlag: "https://flagcdn.com/bo.svg",
   },
   {
-    fullName: "Jonathan Williams",
-    email: "jowi@gmail.com",
+    fullName: "Emily Smith",
+    email: "emily.smith@example.com",
     nationality: "United States of America",
     nationalId: "633678543",
     countryFlag: "https://flagcdn.com/us.svg",
   },
-
-  // GPT
   {
     fullName: "Emma Watson",
     email: "emma@gmail.com",
