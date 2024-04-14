@@ -9,6 +9,7 @@ export const useSettings = () => {
   } = useQuery({
     queryKey: ["settings"],
     queryFn: getSettings,
+    staleTime: Infinity,
   });
 
   return {
