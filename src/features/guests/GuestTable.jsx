@@ -5,9 +5,10 @@ import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
 import Empty from "../../ui/Empty";
 import GuestRow from "./GuestRow";
+import Pagination from "../../ui/Pagination";
 
 function GuestTable() {
-  const { guests, isGuestsLoading } = useGuests();
+  const { guests, isGuestsLoading, count } = useGuests();
 
   const [searchParams] = useSearchParams();
 
@@ -65,6 +66,10 @@ function GuestTable() {
           data={sortedCabins}
           render={(guest) => <GuestRow guest={guest} key={guest.id} />}
         />
+
+        <Table.Footer>
+          <Pagination count={count} />
+        </Table.Footer>
       </Table>
     </Menus>
   );

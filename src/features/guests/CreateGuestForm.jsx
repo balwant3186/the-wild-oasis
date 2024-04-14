@@ -5,14 +5,14 @@ import Button from "../../ui/Button";
 import FormRow from "../../ui/FormRow";
 import { useCreateGuest } from "./useCreateGuest";
 import { EMAIL_REGEX } from "../../utils/constants";
-// import { useEditCabin } from "./useEditCabin";
+import { useEditGuest } from "./useEditGuest";
 
 function CreateGuestForm({ guestToEdit = {}, onCloseModal }) {
   const { id: editCabinId, ...editValues } = guestToEdit;
 
   const isEditSession = Boolean(editCabinId);
 
-  const { register, handleSubmit, reset, getValues, formState } = useForm({
+  const { register, handleSubmit, reset, formState } = useForm({
     defaultValues: isEditSession ? editValues : {},
   });
 
@@ -20,20 +20,22 @@ function CreateGuestForm({ guestToEdit = {}, onCloseModal }) {
 
   const { createGuest, isCreating } = useCreateGuest();
 
-  //   const { editCabin, isEditing } = useEditCabin();
+  const { editGuest, isEditing } = useEditGuest();
 
   const onSubmit = (data) => {
-    console.log("🚀 ~ onSubmit ~ data:", data);
     if (isEditSession) {
-      //   editCabin(
-      //     { newCabinData: { ...data, image }, id: editCabinId },
-      //     {
-      //       onSuccess: () => {
-      //         reset();
-      //         onCloseModal?.();
-      //       },
-      //     }
-      //   );
+      editGuest(
+        {
+          newGuestData: { ...data },
+          id: editCabinId,
+        },
+        {
+          onSuccess: () => {
+            reset();
+            onCloseModal?.();
+          },
+        }
+      );
     } else {
       createGuest(
         { ...data },
@@ -51,9 +53,7 @@ function CreateGuestForm({ guestToEdit = {}, onCloseModal }) {
     console.log(errors);
   };
 
-  //   const isWorking = isCreating || isEditing;
-
-  const isWorking = false;
+  const isWorking = isCreating || isEditing;
 
   return (
     <Form
