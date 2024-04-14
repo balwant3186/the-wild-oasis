@@ -4,6 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
+import { EMAIL_REGEX } from "../../utils/constants";
 
 function SignupForm() {
   const { signup, isSigningUp } = useSignup();
@@ -39,7 +40,7 @@ function SignupForm() {
           {...register("email", {
             required: "This field is required",
             pattern: {
-              value: /\S+@\S+\.\S+/,
+              value: EMAIL_REGEX,
               message: "Invalid email address",
             },
           })}

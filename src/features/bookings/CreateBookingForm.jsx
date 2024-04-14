@@ -4,13 +4,12 @@ import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
-import { useGuests } from "./useGuests";
+import { useGuests } from "../guests/useGuests";
 import Select from "../../ui/Select";
 // import { useCreateCabin } from "./useCreateCabin";
 // import { useEditCabin } from "./useEditCabin";
 import { useCabins } from "../cabins/useCabins";
 import { useSettings } from "../settings/useSettings";
-import Checkbox from "../../ui/Checkbox";
 import DataItem from "../../ui/DataItem";
 import { formatCurrency } from "../../utils/helpers";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
@@ -220,15 +219,3 @@ function CreateBookingForm({ bookingToEdit = {}, onCloseModal }) {
 }
 
 export default CreateBookingForm;
-
-// Todo
-
-// ! Add has breakfast checkbox
-// ! Add is Paid checkbox
-// ! Add Start Date and End Date inputs
-// ? Add status select
-// * Add Form validation
-// ! Add Total Price for displaying
-// * Add Api
-// * Edit Form preselect all data
-// * Edit Api
