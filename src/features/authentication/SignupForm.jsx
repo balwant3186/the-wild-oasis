@@ -4,20 +4,25 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
+import { useAdminSignup } from "./useAdminSignup";
 
 function SignupForm() {
   const { signup, isSigningUp } = useSignup();
+
+  const { adminSignup, error } = useAdminSignup();
 
   const { register, formState, handleSubmit, getValues, reset } = useForm();
   const { errors } = formState;
 
   const onSubmit = ({ fullName, password, email }) => {
-    signup(
-      { fullName, password, email },
-      {
-        onSettled: () => reset,
-      }
-    );
+    // signup(
+    //   { fullName, password, email },
+    //   {
+    //     onSettled: () => reset,
+    //   }
+    // );
+
+    adminSignup({ fullName, password, email }, { onSettled: () => reset });
   };
 
   return (

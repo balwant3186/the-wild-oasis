@@ -97,3 +97,24 @@ export const updateUser = async ({ fullName, avatar, password }) => {
 
   return updatedUser;
 };
+
+export const adminSignup = async ({ fullName, email, password }) => {
+  const { data, error } = await supabase.auth.admin.createUser({
+    email,
+    password,
+    options: {
+      data: {
+        fullName,
+        avatar: "",
+        role: "super-admin",
+      },
+    },
+  });
+  console.log("🚀 ~ adminSignup ~ data:", data);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+};
