@@ -14,6 +14,7 @@ import Checkin from "./pages/Checkin";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./ui/ErrorFallback";
+import Guests from "./pages/Guests";
 
 const DashboardRedirect = () => {
   const navigate = useNavigate();
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/account",
         element: <Account />,
+      },
+      {
+        path: "guests",
+        element: <Guests />,
       },
     ],
   },
